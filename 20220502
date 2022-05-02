@@ -1,0 +1,47 @@
+'''
+a = 49
+m = 3
+b = 0
+   #apple is 46
+while a>=m:
+    b+=1
+    a=a-m
+
+print(f'남은 사과는 {a}개이고, 사람당 {b}개 입니다.')
+'''
+#보드 모델링하기
+BOARD = [ [1,2,3],
+          [4,0,5],
+          [6,7,8] ]
+#화면의 보드상태 출력하기
+print(BOARD[0])
+print(BOARD[1])
+print(BOARD[2])
+r = 1
+c = 1
+
+key = input("wasd중에 하나 입력")
+
+#만약 key값이 입력값 d와 같다면
+#BOARD[2][2]와 BOARD[2][1]를 서로 바꿔 주기
+
+if key == 'd':
+#왼손,오른손 = 오른손,왼손 
+    BOARD[r][c],BOARD[r][c+1] = BOARD[r][c+1],BOARD[r][c]
+    r= r
+    c= c+1
+elif key == 'a':
+    BOARD[r][c],BOARD[r][c-1] = BOARD[r][c-1],BOARD[r][c]
+    r = r
+    c = c-1
+elif key == 's':
+    BOARD[r][c],BOARD[r+1][c] = BOARD[r+1][c],BOARD[r][c]
+    r = r+1
+    c = c
+elif key == 'w':
+    BOARD[r][c],BOARD[r-1][c] = BOARD[r-1][c],BOARD[r][c]
+    r = r - 1
+    c = c
+print(BOARD[0])
+print(BOARD[1])
+print(BOARD[2])
